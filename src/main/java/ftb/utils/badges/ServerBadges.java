@@ -44,7 +44,7 @@ public class ServerBadges {
             try {
                 LMURLConnection connection = new LMURLConnection(
                         RequestMethod.SIMPLE_GET,
-                        "http://pastebin.com/raw/Mu8McdDR");
+                        "https://pastebin.com/raw/Mu8McdDR");
                 global = connection.connect().asJson();
             } catch (Exception ex) {
                 ex.printStackTrace();
