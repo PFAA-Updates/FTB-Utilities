@@ -3,6 +3,7 @@ package ftb.utils.mod.handlers;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 import net.minecraft.entity.Entity;
@@ -33,7 +34,7 @@ public class FTBUWorldEventHandler // FTBLIntegration
 
         // Move /world/latmod/LMPlayers.txt to /world/LatMod/LMPlayers.txt
         try {
-            Path worldPath = e.world.getSaveHandler().getWorldDirectory().toPath();
+            Path worldPath = Paths.get(e.world.getSaveHandler().getWorldDirectoryName());
             Path oldFile = worldPath.resolve("latmod").resolve("LMPlayers.txt");
             Path newFile = worldPath.resolve("LatMod").resolve("LMPlayers.txt");
             if (oldFile.toFile().exists() && !newFile.toFile().exists()) {
